@@ -1,0 +1,23 @@
+<%- include('partials/header'); -%>
+
+<ul class="nav navbar-nav navbar-right">
+  <!-- 6 -->
+  <li><button><a href="/compose">Compose</a></button></li>
+  <li><button><a href="/logout">Logout</a></button></li>
+</ul>
+
+<h1>Home</h1>
+<p><%= staringContent %> </p>
+<h3>Your Articles</h3>
+
+
+<% posts.forEach(function(post){ %> 
+   
+  <h1><%= post.Heading %></h1>
+  <p><%= post.writeup.substring(0, 100) + "..." %>
+   <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+<% }); %> 
+
+<%- include('partials/footer'); -%>
